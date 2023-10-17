@@ -1,0 +1,12 @@
+
+  <div class="card h-100 rounded-1">
+      <img src="{{product.image}}" class="card-img-top mx-auto" alt="product_1" style="width: 250px">
+    <div class="card-body">
+      <h5 class="card-title">{{product.title}}</h5>
+      <p class="card-text">{{product.description | reduceText}}</p>
+      <div class="d-flex justify-content-center">
+        <a [routerLink]="['/catalog', product.id]" class="btn btn-primary col-12 col-sm-5 col-md-6">Подробнее</a>
+      </div>
+    </div>
+  </div>
+

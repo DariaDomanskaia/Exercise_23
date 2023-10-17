@@ -1,0 +1,122 @@
+<div class="container-lg">
+  <div class="my-5 py-4">
+    <div><img class="w-100" src="assets/images/1.png" alt="tea_1"></div>
+  </div>
+</div>
+
+<div class="container p-4 mb-5">
+  <div class="h2 text-center fw-weight-bold mb-5">Ответы на часто задаваемые вопросы</div>
+
+  <div class="row justify-content-center">
+    <div ngbAccordion class="accordion col-lg-10" id="accordionExample">
+      <div ngbAccordionItem class="accordion-item border-white shadow-none mb-3">
+        <h2 ngbAccordionHeader class="accordion-header">
+          <button ngbAccordionButton class="accordion-button rounded-3 bg-primary py-4 text-white" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
+                  aria-controls="collapseOne">
+            Собираете ли вы подарочные боксы?
+          </button>
+        </h2>
+        <div ngbAccordionCollapse id="collapseOne" class="accordion-collapse collapse show border-white"
+             data-bs-parent="#accordionExample">
+          <div ngbAccordionBody class="accordion-body border-white py-4">
+            Да, у нас есть такая услуга. Мы можем собрать подарочный бокс на любой вкус, объем и
+            стоимость!
+          </div>
+        </div>
+      </div>
+      <div ngbAccordionItem class="accordion-item border-white shadow-none mb-3">
+        <h2 ngbAccordionHeader class="accordion-header">
+          <button ngbAccordionButton class="accordion-button  rounded-3 bg-primary py-4 text-white" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
+                  aria-controls="collapseTwo">
+            Сколько у вас разновидностей чая?
+          </button>
+        </h2>
+        <div ngbAccordionCollapse id="collapseTwo" class="accordion-collapse collapse border-white"
+             data-bs-parent="#accordionExample">
+          <div ngbAccordionBody class="accordion-body">
+            This is the second item's accordion body. It is hidden by default, until the collapse plugin
+            adds the appropriate classes that we use to style each element.
+            These classes control the overall appearance, as well as the showing and hiding via CSS
+            transitions.
+          </div>
+        </div>
+      </div>
+      <div ngbAccordionItem class="accordion-item border-white shadow-none mb-3">
+        <h2 ngbAccordionHeader class="accordion-header">
+          <button ngbAccordionButton class="accordion-button rounded-3 bg-primary py-4 text-white" type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            В какой срок осуществляется доставка?
+          </button>
+        </h2>
+        <div ngbAccordionCollapse id="collapseThree" class="accordion-collapse collapse border-white"
+             data-bs-parent="#accordionExample">
+          <div ngbAccordionBody class="accordion-body">
+            Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
+            Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
+            ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
+            lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
+          </div>
+        </div>
+      </div>
+      <div ngbAccordionItem class="accordion-item border-white shadow-none mb-3">
+        <h2 ngbAccordionHeader class="accordion-header">
+          <button ngbAccordionButton class="accordion-button rounded-3 bg-primary py-4 text-white" type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+            У вас обновляется ассортимент?
+          </button>
+        </h2>
+        <div ngbAccordionCollapse id="collapseFour" class="accordion-collapse collapse border-white"
+             data-bs-parent="#accordionExample">
+          <div ngbAccordionBody class="accordion-body">
+            Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+            et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+            faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
+            mauris vel est.
+            <p>
+              Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
+              Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+              inceptos himenaeos.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div ngbAccordionItem class="accordion-item border-white shadow-none mb-3">
+        <h2 ngbAccordionHeader class="accordion-header">
+          <button ngbAccordionButton class="accordion-button rounded-3 bg-primary py-4 text-white" type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseFifth" aria-expanded="false" aria-controls="collapseFifth">
+            Какого объема у вас пачки чая?
+          </button>
+        </h2>
+        <div ngbAccordionCollapse id="collapseFifth" class="accordion-collapse collapse border-white"
+             data-bs-parent="#accordionExample">
+          <div ngbAccordionBody class="accordion-body">
+            Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+            et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+            faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
+            mauris vel est.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" *ngIf="timer === true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Посмотрите наши чайные коллекции</h5>
+        <a class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="closeModal()"></a>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <a [routerLink]="'/catalog'" class="btn btn-primary">Смотреть</a>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,125 @@
+<div class="container">
+  <div [hidden]="submitted" class="col-lg-8 mx-auto">
+    <div class="h2 text-center fw-weight-bold my-5">Сделать заказ</div>
+
+    <form class="row g-3 mt-3 mb-5" [formGroup]="orderForm" (ngSubmit)="create()">
+      <div class="col-sm-12 col-md-6">
+        <label for="productName" class="form-label">Товар</label>
+        <input
+          formControlName="productTitle" readonly
+          type="text" class="form-control" id="productName" name="productTitle">
+      </div>
+
+      <div class="col-sm-12 col-md-6">
+        <label for="comment" class="form-label">Комментарий</label>
+        <input
+          formControlName="comment"
+          type="text" class="form-control" id="comment" name="comment">
+      </div>
+
+      <div class="col-sm-12 col-md-6 col-lg-4">
+        <label for="inputName" class="form-label">Имя</label>
+        <input
+          formControlName="userName"
+          type="text" class="form-control" id="inputName" name="userName">
+        <div [class]="'mt-0'"
+             *ngIf="orderForm.get('userName')?.invalid && (orderForm.get('userName')?.dirty || orderForm.get('userName')?.touched)">
+          <div [class]="'text-danger'" *ngIf="orderForm.get('userName')?.errors?.['required']">
+            Обязательное поле
+          </div>
+          <div [class]="'text-danger'" *ngIf="orderForm.get('userName')?.errors?.['userNameValidator']">
+            Используйте только буквы
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-sm-12 col-md-6 col-lg-4">
+        <label for="inputLastName" class="form-label">Фамилия</label>
+        <input
+          formControlName="userLastName"
+          type="text" class="form-control" id="inputLastName" name="userLastName">
+        <div [class]="'mt-0'"
+             *ngIf="orderForm.get('userLastName')?.invalid && (orderForm.get('userLastName')?.dirty || orderForm.get('userLastName')?.touched)">
+          <div [class]="'text-danger'" *ngIf="orderForm.get('userLastName')?.errors?.['required']">
+            Обязательное поле
+          </div>
+          <div [class]="'text-danger'" *ngIf="orderForm.get('userLastName')?.errors?.['userNameValidator']">
+            Используйте только буквы
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-12 col-md-6 col-lg-4">
+        <label for="inputPhoneNumber" class="form-label">Телефон</label>
+        <input
+          formControlName="phone"
+          type="tel" class="form-control" id="inputPhoneNumber" name="phone">
+        <div [class]="'mt-0'"
+             *ngIf="orderForm.get('phone')?.invalid && (orderForm.get('phone')?.dirty || orderForm.get('phone')?.touched)">
+          <div [class]="'text-danger'" *ngIf="orderForm.get('phone')?.errors?.['required']">
+            Обязательное поле
+          </div>
+          <div [class]="'text-danger'" *ngIf="orderForm.get('phone')?.errors?.['numberPhoneValidator']">
+            Номер должен состоять из 11 цифр
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-12 col-md-6">
+        <label for="inputCountry" class="form-label">Страна</label>
+        <input
+          formControlName="country"
+          type="text" class="form-control" id="inputCountry" name="country">
+        <div [class]="'mt-0'"
+             *ngIf="orderForm.get('country')?.invalid && (orderForm.get('country')?.dirty || orderForm.get('country')?.touched)">
+          <div [class]="'text-danger'" *ngIf="orderForm.get('country')?.errors?.['required']">
+            Обязательное поле
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-12 col-md-6">
+        <label for="inputZipCode" class="form-label">Индекс</label>
+        <input
+          formControlName="zip"
+          type="number" class="form-control" id="inputZipCode" name="zip">
+        <div [class]="'mt-0'"
+             *ngIf="orderForm.get('zip')?.invalid && (orderForm.get('zip')?.dirty || orderForm.get('zip')?.touched)">
+          <div [class]="'text-danger'" *ngIf="orderForm.get('zip')?.errors?.['required']">
+            Обязательное поле
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-12 col-md-6 col-lg-12">
+        <label for="inputAddress" class="form-label">Адрес</label>
+        <input
+          formControlName="address"
+          type="text" class="form-control" id="inputAddress" name="address">
+        <div [class]="'mt-0'"
+             *ngIf="orderForm.get('address')?.invalid && (orderForm.get('address')?.dirty || orderForm.get('address')?.touched)">
+          <div [class]="'text-danger'" *ngIf="orderForm.get('address')?.errors?.['required']">
+            Обязательное поле
+          </div>
+          <div [class]="'text-danger'" *ngIf="orderForm.get('address')?.errors?.['addressValidator']">
+            Используйте буквы, цифры, пробелы и знаки "-" и "/"
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-12  col-lg-3">
+        <button id="submit" type="submit" class="btn btn-primary w-100" [disabled]="orderForm.invalid">Отправить</button>
+      </div>
+
+    </form>
+  </div>
+  <div [hidden]="!submitted" id="wr" class="d-flex align-items-center justify-content-center">
+    <div *ngIf="success"  id="thanks" class="message h2 text-center fw-weight-bold my-5">
+      Спасибо за заказ! Мы свяжемся с вами в ближайшее время.
+    </div>
+    <div *ngIf="!success" id="error" class="message h2 text-center text-danger fw-weight-bold my-5">
+      Ошибка создания заказа! Повторите попытку!
+    </div>
+  </div>
+</div>
