@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {OrderFormType} from "../types/order-form.type";
+import {OrderFormType} from "../../../types/order-form.type";
 
 @Injectable({
   providedIn: 'root'

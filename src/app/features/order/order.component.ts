@@ -1,12 +1,12 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
-import {OrderService} from "../../../services/order.service";
+import {OrderService} from "../../shared/services/order.service";
 import {FormGroup, Validators} from "@angular/forms";
 import {FormControl} from "@angular/forms";
-import {nameValidator} from "../../../directives/user-name-validator.directive";
-import {numberPhoneValidator} from "../../../directives/number-phone-validator.directive";
-import {addressValidator} from "../../../directives/address-validator.directive";
-declare var $: any;
+import {nameValidator} from "../../shared/directives/user-name-validator.directive";
+import {numberPhoneValidator} from "../../shared/directives/number-phone-validator.directive";
+import {addressValidator} from "../../shared/directives/address-validator.directive";
+
 
 
 @Component({
