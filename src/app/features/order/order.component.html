@@ -115,10 +115,10 @@
     </form>
   </div>
   <div [hidden]="!submitted" id="wr" class="d-flex align-items-center justify-content-center">
-    <div *ngIf="success"  id="thanks" class="message h2 text-center fw-weight-bold my-5">
+    <div *ngIf="success === true"  id="thanks" class="message h2 text-center fw-weight-bold my-5">
       Спасибо за заказ! Мы свяжемся с вами в ближайшее время.
     </div>
-    <div *ngIf="!success" id="error" class="message h2 text-center text-danger fw-weight-bold my-5">
+    <div *ngIf="success === false" id="error" class="message h2 text-center text-danger fw-weight-bold my-5">
       Ошибка создания заказа! Повторите попытку!
     </div>
   </div>

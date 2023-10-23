@@ -39,7 +39,7 @@ export class OrderComponent implements OnInit {
 
   isValid: boolean = false;
   submitted: boolean = false;
-  success: boolean = true;
+  success: boolean | null = null;
 
   ngOnInit(): void {
     this.activatedRoute.queryParams.subscribe((params) => {
@@ -68,6 +68,7 @@ export class OrderComponent implements OnInit {
       .subscribe(response => {
         if (response.success) {
           this.submitted = true;
+          this.success = true;
           setTimeout(() => {
             this.router.navigate(['/']);
           }, 4000);
