@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/exercise-22",
+            "outputPath": "dist/exercise-23",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Exercise_22:build:production"
+              "browserTarget": "Exercise_23:build:production"
             },
             "development": {
-              "browserTarget": "Exercise_22:build:development"
+              "browserTarget": "Exercise_23:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Exercise_22:build"
+            "browserTarget": "Exercise_23:build"
           }
         },
         "test": {
